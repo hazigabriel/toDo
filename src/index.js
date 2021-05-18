@@ -5,6 +5,7 @@ import handleNavbarMobile from "./handleNavbarMobile";
 import renderElements from "./renderElements";
 import generateDefaultProjects from "./generateDefaultProjects"
 
+
  
 //upon loading the document, we run this function to triger the  materialize
 //js, in order to run the date-picker and priority-picker
