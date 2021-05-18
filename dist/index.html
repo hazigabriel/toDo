@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>toDo App</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="../node_modules\materialize-css\dist\css\materialize.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&amp;display=swap" rel="stylesheet">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+ <div class="wrapper">
+
+ 	<div class="nav-bar">
+ 		<h5 class="">projects  </h5> 
+
+ 		<div class="projects">
+
+ 		</div>
+ 		<div class="input">
+
+ 			<input placeholder="new project" type="text" class="validate newProject">
+ 			<i class="material-icons addNewProjectButton">add_circle</i>
+
+         	
+ 		</div>
+ 	</div>
+
+ 	<div class="menu-button-wrapper">
+ 		<i class="material-icons right menu-button ">menu</i>
+ 	</div>
+
+
+ 	<div class="content">
+ 		<div class="task-wrapper">
+ 		
+ 		</div>
+ 	<div class="row">
+ 		<div class="center-align "> 
+ 		  <i class="material-icons newTaskButton center">add_circle</i>
+ 		</div>
+ 	</div>
+ 	</div>
+
+ 	<div class="overlays">
+
+ 		<div class="newTask hidden">
+ 			<div class="row">
+ 				<div class="col l3 m2 s1"></div>
+
+ 				<div class="col l6 m8 s10 taskContent">
+
+ 					<div class="row">
+ 						<div class="col s1 "></div>
+
+ 						<div class="input-field col s10 taskDescription">
+ 							<input placeholder="task description" type="text" class="validate" id="taskDescription">
+						    <label for="task-description">Task Description</label>
+ 						</div>
+
+ 						<div class="col s1">
+ 							
+ 							<i class="material-icons right closeTabIcon">close</i>
+ 						</div>
+
+ 					</div>
+ 					<div class="row">
+ 						<div class="col s1"></div>
+ 						<div class="input-field col s4">
+						    <select class="priorityPicker">
+						    	<option value="" disabled selected>Choose priority</option>
+						    	<option value="1">High priority</option>
+						    	<option value="2">Medium priority</option>
+						    	<option value="3">Low priority</option>
+							</select>
+							<label>Priority:</label>
+						</div>
+						<div class="col s2"></div>
+						<div class="input-field col s4">
+							  <input type="text" class="datepicker">
+							  <label for="task-description">Due date</label>
+						</div>
+						<div class="col s1"></div>
+
+ 					</div>
+ 					<div class="row">
+ 						<div class="col s1"></div>
+ 						<div class="col s11">
+ 							<button class="btn waves-effect waves-light submitNew" type="submit" name="action">Submit
+    						<i class="material-icons right">send</i>
+							</button>
+ 						</div>
+
+
+ 					</div>
+
+ 				</div>
+
+ 				<div class="col s3"></div>
+ 			</div>
+ 		</div>
+
+ 		<div class="updateTask hidden">
+ 			<div class="row">
+ 				<div class="col l3 m2 s1""></div>
+
+ 				<div class="col l6 m8 s10 taskContent">
+
+ 					<div class="row">
+ 						<div class="col s1 "></div>
+
+ 						<div class="input-field col s10 taskDescription">
+ 							<input placeholder="New task description" id="newTaskDescription" type="text" class="validate">
+						    <label for="task-description">New task Description</label>
+ 						</div>
+
+ 						<div class="col s1">
+ 							
+ 							<i class="material-icons right closeTabIcon closeUpdateTaskIcon">close</i>
+ 						</div>
+
+ 					</div>
+ 					<div class="row">
+ 						<div class="col s1"></div>
+ 						<div class="input-field col s4">
+						    <select class="newPriorityPicker">
+						    	<option value="0" disabled selected>New priority</option>
+						    	<option value="1">High priority</option>
+						    	<option value="2">Medium priority</option>
+						    	<option value="3">Low priority</option>
+							</select>
+							<label>New priority</label>
+							<label class="newPriorityLabel">(don't select anything to keep the existing due Date one):</label>
+						</div>
+						<div class="col s2"></div>
+						<div class="input-field col s4">
+							  <input type="text" class="newDatepicker datepicker">
+							   
+						</div>
+						<div class="col s1"></div>
+
+ 					</div>
+ 					<div class="row">
+ 						<div class="col s1"></div>
+ 						<div class="col s5	">
+ 							<button class="btn waves-effect waves-light submitTaskUpdate" type="submit" name="action">Submit 
+    						<i class="material-icons right">update</i>
+							</button>
+ 						</div>
+ 						<div class="col s1"></div>
+ 						<div class="col s5	">
+ 							<button class="btn waves-effect waves-light deleteTask" type="submit" name="action">Delete task
+    						<i class="material-icons right">delete_forever
+</i>
+							</button>
+ 						</div>
+
+
+ 					</div>
+
+ 				</div>
+
+ 				<div class="col s3"></div>
+ 			</div>
+ 		</div>
+
+ 		<div class="updateProject hidden ">
+ 			<div class="row">
+ 				<div class="col l3 m2 s1""></div>
+
+ 				<div class="col l6 m8 s10 taskContent">
+
+ 					<div class="row">
+ 						<div class="col s1 "></div>	
+
+ 						<div class="input-field col s10 taskDescription">
+ 							 <p class="updateProjectError hidden">The updated name must be at least 1 character long.</p>
+ 							<input placeholder="New project description" id="project-description" type="text" class="validate">
+						    <label for="project-description">New project Description</label>
+ 						</div>
+
+ 						<div class="col s1">
+ 							
+ 							<i class="material-icons right closeTabIcon closeUpdateProjectIcon">close</i>
+ 						</div>
+
+ 					</div>
+ 					<div class="row">
+ 						<div class="col s1"></div>
+ 						<div class="col s11">
+ 							<button class="btn waves-effect waves-light submitProjectUpdate" type="submit" name="action">Submit Update
+    						<i class="material-icons right">update</i>
+							</button>
+ 						</div>
+
+
+ 					</div>
+ 			
+ 				</div>
+ 			</div>
+ 		</div>
+
+
+
+ 	</div>
+
+ 
+<script type="text/javascript" src="../node_modules\materialize-css\dist\js\materialize.js"></script>
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
