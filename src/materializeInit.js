@@ -1,4 +1,4 @@
-import M from './materialize.js'
+import M from './materialize';
 const materializeInit = function() {
 	var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems);
